@@ -1,42 +1,34 @@
 import React from 'react';
 import {
-  ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
+    ChakraProvider,
+    Box,
+    Text,
+    Link,
+    VStack,
+    Code,
+    Grid,
+    theme,
+    Divider,
 } from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
+import Header from './Components/Header/Header';
+import Profile from './Components/Profile';
+import Projects from './Components/Projects';
+import Contacts from './Components/Contacts';
 
 function App() {
-  return (
-    <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
-        </Grid>
-      </Box>
-    </ChakraProvider>
-  );
+    return (
+        <ChakraProvider theme={theme}>
+            <VStack p={5} w="100%" spacing={6}>
+                <Header></Header>
+                <Divider></Divider>
+                <Profile></Profile>
+                <Divider></Divider>
+                <Projects></Projects>
+                <Divider></Divider>
+                <Contacts></Contacts>
+            </VStack>
+        </ChakraProvider>
+    );
 }
 
 export default App;
