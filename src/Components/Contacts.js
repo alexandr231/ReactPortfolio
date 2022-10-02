@@ -1,14 +1,17 @@
-import { Flex, Icon, Link, Box } from '@chakra-ui/react'
+import { Flex, Icon, Link, Box, useMediaQuery, Text } from '@chakra-ui/react'
 import React from 'react'
 import { FaTelegram, FaVk, FaGithub, FaDiscord } from 'react-icons/fa'
 
 function Contacts() {
+
+    const [isNotSmallerScreen] = useMediaQuery('(min-width:600px)');
+
     return (
-        <Flex flexDirection="column" alignItems="flex-start" w="100%">
-            <Box fontSize="2xl" pl={20} mb="5">
+        <Flex flexDirection="column" alignItems="flex-start" w="100%" mb="15vh">
+            <Box fontSize="2xl" pl={20} mb="10">
                 Contacts
             </Box>
-            <Flex flexDirection="row" justifyContent="center" gap="20vh" w="100%">
+            <Flex direction={isNotSmallerScreen ? "row" : "column"} alignItems="center" gap="20vh" w="100%" justifyContent="center" alignSelf="center">
                 <Link href='https://t.me/alexandr0vsol0' isExternal="true">
                     <Icon as={FaTelegram} boxSize="50">
                     </Icon>
@@ -25,8 +28,11 @@ function Contacts() {
                     <Icon as={FaDiscord} boxSize="50">
                     </Icon>
                 </Link>
-
             </Flex>
+            <Box fontSize="3xl" p={20} mb="10" alignSelf="center">
+                <Text>You can also email me at:</Text>
+                <Text bgGradient="linear(to-r, purple.400, purple.600, purple.800)" bgClip="text" >alexandr0vsol0@gmail.com</Text>
+            </Box>
         </Flex>
     )
 }

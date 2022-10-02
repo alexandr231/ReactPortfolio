@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import {
     ChakraProvider,
     Box,
@@ -9,22 +9,35 @@ import {
     Grid,
     theme,
     Divider,
+    Button,
 } from '@chakra-ui/react';
 import Header from './Components/Header/Header';
 import Profile from './Components/Profile';
-import Projects from './Components/Projects';
+import Projects from './Components/Projects/Projects';
 import Contacts from './Components/Contacts';
 
 function App() {
+
+    const profile = React.createRef();
+    const contacts = React.createRef();
+    const projects= React.createRef();
+
+    const scrollToSection = (elementRef) => {
+        window.scrollTo({
+            top: elementRef.current.offsetTop,
+            behavior: 'smooth'
+        })
+    }
+
     return (
-        <ChakraProvider theme={theme}>
+        <ChakraProvider theme={theme} w="100%" h="100%">
             <VStack p={5} w="100%" spacing={6}>
-                <Header></Header>
-                <Divider></Divider>
+                <Header scrollToSection={scrollToSection} profile={profile} contacts={contacts} projects={projects}></Header>
+                <Divider ref={profile}></Divider>
                 <Profile></Profile>
-                <Divider></Divider>
-                <Projects></Projects>
-                <Divider></Divider>
+                <Divider ref={projects}></Divider>
+                <Projects ></Projects>
+                <Divider ref={contacts}></Divider>
                 <Contacts></Contacts>
             </VStack>
         </ChakraProvider>
