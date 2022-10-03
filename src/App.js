@@ -1,15 +1,9 @@
 import React, { useRef } from 'react';
 import {
     ChakraProvider,
-    Box,
-    Text,
-    Link,
     VStack,
-    Code,
-    Grid,
     theme,
     Divider,
-    Button,
 } from '@chakra-ui/react';
 import Header from './Components/Header/Header';
 import Profile from './Components/Profile';

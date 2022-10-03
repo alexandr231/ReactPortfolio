@@ -15,9 +15,9 @@ function Projects() {
                 Projects
             </Box>
             <Flex direction={isNotSmallerScreen ? "row" : "column"} justifyContent="space-around " w="100%" gap="5vh" wrap="wrap">
-                <ProjectBox herf='https://github.com/alexandr231/Algorithm' icon={DiPython} name="Structures and algorithms"/>
-                <ProjectBox herf='https://github.com/alexandr231/webPage' icon={DiWebplatform} name="First simple web site"/>
-                <ProjectBox herf='https://github.com/alexandr231/learnReact' icon={DiReact} name="React learning project"/>
+                <ProjectBox href='https://github.com/alexandr231/Algorithm' icon={DiPython} name="Structures and algorithms"/>
+                <ProjectBox href='https://github.com/alexandr231/webPage' icon={DiWebplatform} name="First simple web site"/>
+                <ProjectBox href='https://github.com/alexandr231/learnReact' icon={DiReact} name="React learning project"/>
             </Flex>
         </Flex>
     )
