@@ -27,8 +27,8 @@ function App() {
         <ChakraProvider theme={theme} w="100%" h="100%">
             <VStack p={5} w="100%" spacing={6}>
                 <Header scrollToSection={scrollToSection} profile={profile} contacts={contacts} projects={projects}></Header>
-                <Divider ref={profile} contacts={contacts}></Divider>
-                <Profile scrollToSection={scrollToSection}></Profile>
+                <Divider ref={profile}></Divider>
+                <Profile scrollToSection={scrollToSection} contacts={contacts}></Profile>
                 <Divider ref={projects}></Divider>
                 <Projects ></Projects>
                 <Divider ref={contacts}></Divider>
