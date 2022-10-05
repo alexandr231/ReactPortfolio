@@ -1,7 +1,7 @@
 import { Box, Circle, Flex, Stack, useMediaQuery, Text, useColorMode, Button, Image } from '@chakra-ui/react'
 import React from 'react'
 
-function Profile() {
+function Profile(props) {
 
     const { colorMode } = useColorMode();
     const isDark = colorMode === "dark";
@@ -37,7 +37,7 @@ function Profile() {
                         bgClip="text">
                         this site represents my projects and achievments
                     </Text>
-                    <Button mt={8} colorScheme="blue">
+                    <Button mt={8} colorScheme="blue" onClick={() => props.scrollToSection(props.contacts)}>
                         Contact me
                     </Button>
                 </Box>
